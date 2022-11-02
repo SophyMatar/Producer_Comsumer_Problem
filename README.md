@@ -18,3 +18,4 @@ $ ./producer & ./consumer &
 #Example 
 
 
+<img width="713" alt="Screen Shot 2022-11-01 at 11 58 26 PM" src="https://user-images.githubusercontent.com/90429123/199392329-7d9f1243-072b-4e16-b5b2-8adf897b6879.png">
