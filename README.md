@@ -15,3 +15,6 @@ $ gcc consumer.c -pthread -lrt -o consumer
 $ ./producer & ./consumer &
 
 
+#Example 
+
+
