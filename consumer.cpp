@@ -10,12 +10,14 @@
 
 int main() {
     //create variables for shared memory and a table
-    int sharedMemory;
+    int SMemory;
     int* table;
+    
     // allocates a shared memory
-    sharedMemory = shm_open("table", O_CREAT | O_RDWR, 0666); // creates shared memory object -> table
+    SMemory = shm_open("table", O_CREAT | O_RDWR, 0666); // creates shared memory object -> table
     ftruncate(sharedMemory, sizeof(int)); // size of shared memory
-    table = static_cast<int*>(mmap(0, sizeof(int), PROT_READ | PROT_WRITE, MAP_SHARED, sharedMemory, 0)); // maps object to the address
+    table = static_cast<int*>(mmap(0, sizeof(int), PROT_READ | PROT_WRITE, MAP_SHARED, SMemory, 0)); // maps object to the address
+    
     sem_t* full = sem_open("full", O_CREAT, 0666, 0); // creates semaphores
     sem_t* empty = sem_open("empty", O_CREAT, 0666, 3);
     sem_t* mutex = sem_open("mutex", O_CREAT, 0666, 1);
@@ -47,7 +49,7 @@ int main() {
 
     // deallocate the shared memory
     munmap(table, sizeof(int));
-    close(sharedMemory);
+    close(SMemory);
     shm_unlink("table");
     return 0;
 }
