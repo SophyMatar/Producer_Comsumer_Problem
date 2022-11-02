@@ -37,12 +37,10 @@ int main() {
         sem_post(mutex); // close the mutex
         sem_post(empty);
     }
-    // close the semaphores
+    // closes and unlinks the semaphores
     sem_close(full);
     sem_close(empty);
     sem_close(mutex);
-
-    // unlink the semaphores
     sem_unlink("full");
     sem_unlink("empty");
     sem_unlink("mutex");
