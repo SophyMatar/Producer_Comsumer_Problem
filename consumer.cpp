@@ -15,7 +15,7 @@ int main() {
     
     // allocates a shared memory
     SMemory = shm_open("table", O_CREAT | O_RDWR, 0666); // creates shared memory object -> table
-    ftruncate(sharedMemory, sizeof(int)); // size of shared memory
+    ftruncate(SMemory, sizeof(int)); // size of shared memory
     table = static_cast<int*>(mmap(0, sizeof(int), PROT_READ | PROT_WRITE, MAP_SHARED, SMemory, 0)); // maps object to the address
     
     sem_t* full = sem_open("full", O_CREAT, 0666, 0); // creates semaphores
