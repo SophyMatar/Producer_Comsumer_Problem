@@ -8,9 +8,9 @@ We use threads in the producer program and consumer program. Shared memory is us
 
 To compile the programs: 
 
-$ gcc producer.cpp -pthread -lrt -o producer
+$ g++ producer.cpp -pthread -lrt -o producer
 
-$ gcc consumer.cpp -pthread -lrt -o consumer
+$ g++ consumer.cpp -pthread -lrt -o consumer
 
 $ ./producer & ./consumer &
 
