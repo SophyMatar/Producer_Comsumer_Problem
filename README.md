@@ -1,4 +1,4 @@
-# Producer_Comsumer_Problem
+# Producer Comsumer Problem
 
 The producer generates items and puts items onto the table. 
 The consumer will pick up items. The table can only hold two items at the same time. When the table is complete, the producer will wait. 
@@ -7,8 +7,11 @@ We use threads in the producer program and consumer program. Shared memory is us
 
 
 To compile the programs: 
+
 $ gcc producer.c -pthread -lrt -o producer
+
 $ gcc consumer.c -pthread -lrt -o consumer
+
 $ ./producer & ./consumer &
 
 
